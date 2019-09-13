@@ -1,0 +1,56 @@
+.myStyle
+{
+  display : grid;
+}
+.myStyle select
+{
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.form-horizontal.container.ng-valid > .form-row
+{
+    margin-bottom: 10px;
+    margin-top: 10px !important;
+}
+.divider{
+      width:7px;
+      height:auto;
+      display:inline-grid;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #C0C0C0;
+    border-color: #C0C0C0;
+    margin-left: 14px;
+}
+.input.row.mt-3{
+padding: 19px 0px 0px 211px !important;
+}
+ 
+
+.custom_input_grp > .imIPChild
+{
+    padding: 10px;
+    width: 100%;
+    display: block;
+}
+
+.marLeft120
+{
+    margin-left: 120px;
+}
+.pad7px
+{
+    padding: 7px;
+}
+
+
+/* .row
+{
+    margin-right: -17px !important;
+    margin-left: 36px !important;
+} */

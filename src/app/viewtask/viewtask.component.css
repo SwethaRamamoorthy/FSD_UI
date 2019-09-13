@@ -1,0 +1,9 @@
+.roundButton{
+    border-radius: 1.25em;
+    border:solid transparent;
+}
+.divider{
+    width:7px;
+    height:auto;
+    display:inline-block;
+}

@@ -1,0 +1,21 @@
+.myStyle
+{
+  display : grid;
+}
+.myStyle select
+{
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.form-horizontal.container.ng-valid > .form-row
+{
+    margin-bottom: 10px;
+}
+.divider{
+      width:7px;
+      height:auto;
+      display:inline-grid;
+}

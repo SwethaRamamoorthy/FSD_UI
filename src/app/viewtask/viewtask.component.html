@@ -1,0 +1,53 @@
+<section class="panel panel-primary">
+	<header class="panel-heading">
+		<h3 align="center">View Task</h3>
+	</header>
+	<label class="error-message">{{message}}</label>
+	<div class="row shadow-lg p-3 mb-5 bg-white rounded">
+		<div class="col-md-12">
+			<form class="form-horizontal">
+				<div class="row mt-3">
+					<label class="control-label col-md-2">Project</label>
+					<div class="col-md-2">
+						<input class="form-control" type="text" name="taskTitle" [(ngModel)]="task.taskTitle">
+					</div>
+					<div class="col-md-2">
+						<input class="form-control" class="roundButton" value="search" type="button" name="search"
+							(change)="updateDates()">
+					</div>
+					<label class="control-label col-md-2">Sort Task by</label>
+					<button class="roundButton col-md-1" (click)="saveTask(task)">Start Date</button>
+					<button class="roundButton col-md-1" (click)="saveTask(task)">End Date</button>
+					<button class="roundButton col-md-1" (click)="saveTask(task)">Priority</button>
+					<button class="roundButton col-md-1" (click)="saveTask(task)">Completed</button>
+				</div>
+				<hr class="dotted">
+				<div>
+					<div class="row mt-3 tasklist">
+						<label class="control-label col-md-2 tasklistHeader text-center">Task</label>
+						<label class="control-label col-md-2 tasklistHeader text-center">Parent</label>
+						<label class="control-label col-md-1 tasklistHeader text-center">Priority</label>
+						<label class="control-label col-md-3 tasklistHeader text-center">Start - End</label>
+						<label class="control-label col-md-2 tasklistHeader text-center">Status</label>
+						<label class="control-label col-md-2 tasklistHeader text-center"></label>
+					</div>
+					<div class="row mt-3" >
+						<label class="control-label col-md-2 tasklist text-center">{{d.taskTitle}}</label>
+						<label class="control-label col-md-2 tasklist text-center">{{d.parentTaskTitle}}</label>
+						<label class="control-label col-md-1 tasklist text-center">{{d.priority}}</label>
+						<label class="control-label col-md-3 tasklist text-center">
+							{{d.startDate| date:'dd-MMM-yyyy'}} - {{d.endDate| date:'dd-MMM-yyyy'}}
+						</label>
+						<label class="control-label col-md-2 tasklist text-center">{{d.status}}</label>
+						<div class="control-label col-md-2 tasklist text-center">
+							<button class="btn btn-primary col-md-5"
+								[routerLink]="['/updateTask',d.taskId]">Edit</button>
+							<div class="divider"></div>
+							<button class="btn btn-danger col-md-5" (click)="endTask(d.taskId)">End</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,91 @@
+<html ng-app="myApp">
+<section class="panel panel-primary">
+  <header class="panel-heading">
+    <h3 align="center">Add Project</h3>
+  </header>
+  <label class="error-message">{{ errMessage }}</label>
+  <div class="col-md-12">
+    <form class="form-horizontal container">
+      <div class="form-row">
+        <label class="control-label col-md-2">Project</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" name="userName" [(ngModel)]="project.projectName">
+        </div>
+      </div>
+      <div class="form-row mt-3">
+        <div class="col-md-2">
+          <input class="myCheckbox" type="checkbox" name="setDate" value="set" (change)="triggerSomeEvent()">set Start & End Date<br>
+        </div>
+        <div class="col-md-5">
+          <input class="form-control" type="date" name="startdate" [disabled]="isDisabled" [(ngModel)]="project.startdate">
+        </div>
+        <div class="col-md-5">
+          <input class="form-control" type="date" name="enddate" [disabled]="isDisabled" [(ngModel)]="project.enddate">
+        </div>
+      </div>
+      <div class="form-row mt-3">
+        <div class="col-md-2">
+          <label class="control-label">Manager</label>
+        </div>
+        <div class="col-md-5">
+          <input class="form-control" type="text" name="manager" [(ngModel)]="project.manager">
+        </div>
+        <div class="col-md-5">
+          <input class="form-control" class="roundButton" value="search" type="button" name="search"
+            (change)="updateDates()">
+        </div>
+      </div>
+      <div class="form-row mt-3">
+        <label class="control-label col-md-4"></label>
+        <div class="col-md-1">
+          <input class="form-control" value="Add" type="button" name="add" (click)="saveProject(project)">
+        </div>
+        <div class="col-md-1">
+          <input class="form-control" value="Reset" type="button" name="reset" (change)="updateDates()">
+        </div>
+      </div>
+      <hr class="dotted">
+      <div class="form-row mt-3">
+        <div class="col-md-12">
+          <input class="form-control" value="search" type="button" name="search" (change)="updateDates()">
+        </div>
+      </div>
+      <div class="form-row mt-3">
+        <div class="abc col-md-12">
+          <label class=" col-md-4 control-label text-center">Sort</label>
+          <button class="roundButton col-md-2" (click)="saveTask(task)">Start Date</button>
+          <button class="roundButton col-md-2" (click)="saveTask(task)">End Date</button>
+          <button class="roundButton col-md-2" (click)="saveTask(task)">Priority</button>
+          <button class="roundButton col-md-2" (click)="saveTask(task)">Completed</button>
+        </div>
+      </div>
+      <div class="form-row mt-3 tasklist" *ngFor="let d of projectList">
+        <div class="col-md-8">
+          <div class="row mt-3">
+            <label class="col-md-8">Project: {{d.projectName}}</label>
+          </div>
+          <div class="row mt-2">
+            <label class="col-md-2">No of Tasks:</label>
+            <label class="col-md-2">{{d.totalTask}}</label>
+            <label class="col-md-2">Completed:</label>
+            <label class="col-md-2">{{d.totalCompleted}}</label>
+          </div>
+          <div class="row mt-2">
+            <label class="col-md-2">start Date:</label>
+            <label class="col-md-2">{{d.startDate}}</label>
+            <label class="col-md-2">end Date:</label>
+            <label class="col-md-2">{{d.endDate}}</label>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <label class="row">Priority</label>
+          <p class="row">{{d.priority}}</p>
+        </div>
+        <div class="col-md-2">
+          <button class="form-row" (click)="saveTask(task)">Priority</button>
+          <button class="row mt-3" (click)="saveTask(task)">Completed</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
