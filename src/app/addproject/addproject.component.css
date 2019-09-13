@@ -1,0 +1,21 @@
+.myCheckbox{
+    margin: 4px ;
+    height: 20px;
+    width: 20px;
+}
+.roundButton{
+    border-radius: 1.25em;
+    border:solid transparent;
+    width:100% !important;
+}
+.mt-3 > .roundButton{
+    max-width: 11.5%;
+}
+.control-label{
+    max-width: 140px;
+    word-wrap: break-word;
+}
+
+.abc > .col-md-2{
+    max-width: 21.666667%;
+}

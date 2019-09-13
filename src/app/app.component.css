@@ -1,0 +1,18 @@
+.navbar-nav{
+    flex-direction: row !important;
+}
+
+.navbar.navbar-nav > li
+{
+    padding: 4px;
+}
+.navbar.navbar-nav > li > a
+{
+    color: white;
+}
+
+.navbar.navbar-nav > li.active > a
+{
+    color: #007bff;
+    font-weight: 500;
+}

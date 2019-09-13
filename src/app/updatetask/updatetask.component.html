@@ -1,0 +1,51 @@
+<section class="panel panel-primary">
+  <header class="panel-heading">
+    <h3 align="center">Update Task</h3>
+  </header>
+  <label class="error-message">{{ errMessage }}</label>
+  <div class="row shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="col-md-12">
+      <form class="form-horizontal container">
+        <div class="form-row ">
+          <label class="control-label col-md-4">Task</label>
+          <div class="col-md-4">
+            <input class="form-control" type="text" name="taskTitle" [(ngModel)]="task.taskTitle">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="control-label col-md-4">Priority</label>
+          <div class="col-md-4">
+            <input class="form-control" type="text" name="priority" [(ngModel)]="task.priority">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="control-label col-md-4">Parent Task</label>
+          <div class="col-md-4 myStyle">
+            <select name="subject" [(ngModel)]="task.parentTaskid"> 
+              <option *ngFor="let d of parentTaskNames" value="{{d.taskId}}" >
+                {{d.taskTitle}}
+              </option>
+            </select>            
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="control-label col-md-4">Start Date</label>
+          <div class="col-md-4">
+            <input class="form-control" type="date" name="startdate" [(ngModel)]="task.startDate">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="control-label col-md-4">End Date</label>
+          <div class="col-md-4">
+            <input class="form-control" type="date" name="enddate" [(ngModel)]="task.endDate">
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="pull-right " align="center">
+          <button class="btn btn-primary" (click)="saveTask(taskbyId)">Save</button>
+          <button class="btn btn-danger" [routerLink]="['/viewTask']">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
