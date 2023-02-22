@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^7.2.15",
     "@angular/platform-server": "^7.2.15",
     "@angular/router": "^7.2.15",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "ng2-search-filter": "^0.4.7",
     "rxjs": "^6.3.3",
